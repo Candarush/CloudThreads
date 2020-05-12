@@ -18,16 +18,11 @@ class CloudFinder
     int gridX, gridY, numthreads;
     Mat compareMat;
     vector<float**> results;
-    
     void CompareHistograms(CloudFinder cl, int gridSizeX, int gridSizeY, Mat* src, Mat compareMat, vector<float**> results, int* threadMarker, mutex* mut);
     
     public:
-    
     float GetCloudness(Mat* inHist , Mat* inImage, int curCellX, int curCellY, int cellSizeX, int cellSizeY);
-    
     CloudFinder(VideoCapture icap, int igridX, int igridY, int inumthreads, Mat icompareMat);
-
     void ProcessCloudVideo();
-                                    
     string GetData();
 };
