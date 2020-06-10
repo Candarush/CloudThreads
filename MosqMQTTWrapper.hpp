@@ -12,10 +12,8 @@ namespace MQTTW
     {
     private:
         void on_message(const struct mosquitto_message *message);
-        std::vector<std::string> mqttmessages;
     public:
         MosqMqttWrapper(char const  *id, const char *host, int port);
-        std::string GetMessage();
         bool send_message(const  char * message);
     };
 }
