@@ -23,16 +23,8 @@ namespace MQTTW
             sprintf(buffer,"%s",message->payload);
             std::string msg = buffer;
             std::cout<<msg<<std::endl;
-            mqttmessages.push_back(msg);
         }
     };
-
-    std::string MosqMqttWrapper::GetMessage()
-    {
-        std::string message = mqttmessages.back();
-        mqttmessages.pop_back();
-        return message;
-    }
 
     bool MosqMqttWrapper::send_message(const  char * message)
     {
